@@ -1,0 +1,80 @@
+.containerprincipal {
+    position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgb(44, 41, 41);
+      border-radius: 2em;
+      padding: 250px;
+      width: 55%;
+      background-color: white;
+}
+
+.container1 {
+    position: absolute;
+      left: 561px;
+      height: 100%;
+      top: 250px;
+      transform: translate(-50%, -50%);
+      padding-top: 1px;
+      width: 50%;
+      background-color: white;
+      border-radius: 2em;
+}
+.d-block {
+  width: 160px;
+  margin-left: 95px;
+  position: static;
+  border-radius: 2em;
+}
+
+.animada {
+  position: absolute;
+ left: -2px;
+ top:-1px;
+ width: 374px;
+ height: 500px;
+ border-radius: 2em;
+}
+
+.mb-3 {
+  position: relative;
+  left:30px;
+  top:4px;
+  width:320px;
+  font-family:Arial;
+}
+
+
+.btn {
+  position: relative;
+  left: 32px;
+  top: 16px;
+  width: 320px;
+}
+
+h3 {
+position:relative;
+left:-11px;
+top:-21px;
+}
+
+p {
+  position:relative;
+  left: 83px;
+  top: -19px;
+  color:#aab5c0;
+  font-family:Arial;
+  text-decoration:none;
+  font-style:normal;
+  font-weight:600;
+}
+
+Form {
+position: relative;
+left: -1px;
+top: -16px;
+}
+
+
+
