@@ -1,0 +1,68 @@
+#titulo {
+    position:relative;
+    font-size: 15px;
+    left:10px;
+    top:78px;
+    color: aliceblue;
+    }
+#canvas {
+    background-color: black;
+}
+#lista{
+    background-color: black;
+}
+#item{
+    color: aliceblue;
+}
+
+#body {
+    position:relative;
+    left:6px;
+    top:67px;
+    }
+ .MuiAvatar-root {
+    position:relative;
+    left:15px;
+    top:32px;
+    width:46px;
+    height:48px;
+    }
+
+#home {
+    position:relative;
+    left:-4px;
+    top:-2px;
+    }
+
+#historial {
+    width: 20px;
+    position:relative;
+    left:-4px;
+    top:-2px;
+}
+
+#trabajadores {
+    width: 20px;
+    position:relative;
+    left:-4px;
+    top:-2px;
+}
+
+#estudiantes {
+    width: 20px;
+    position:relative;
+    left:-4px;
+    top:-2px;
+}
+#archivos {
+    width: 20px;
+    position:relative;
+    left:-4px;
+    top:-2px;
+}
+#config {
+    width: 20px;
+    position:relative;
+    left:-4px;
+    top:-2px;
+}
