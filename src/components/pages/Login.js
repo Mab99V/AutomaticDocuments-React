@@ -1,8 +1,12 @@
+/* eslint-disable no-undef */
 import React, { Component } from "react";
 import '../../styles/LoginS.css';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 
+import { useNavigate } from 'react-router-dom';
+
+const navigate=useNavigate;
 class Login extends Component {
 
 
@@ -44,15 +48,12 @@ render(){
                <Form.Control type="password" placeholder="Ingrese contraseña" name="password" onChange={this.handleChange}/>
            
            </Form.Group>
-               <Button variant="dark" type="submit">
+               <Button onClick={() => navigate("/test")} variant="dark" type="submit">
                   Ingresar
                </Button>
            </Form>
         </div>
     </div>
- 
-
-    
     );
     
  }
