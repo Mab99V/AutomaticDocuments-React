@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import Login from './pages/Login';
-import Narvar from './navigate/narvar'
+import Navbar from './navigate/Navbar'
 
 
 function App(){
@@ -11,7 +11,7 @@ function App(){
         <div className='col'>
           <Routes>
               <Route path="/" element={<Login/>} />
-              <Route path="/test" element={<Narvar/>} />
+              <Route path="/landingpage" element={<Navbar/>} />
           </Routes>
         </div>
       </div>
