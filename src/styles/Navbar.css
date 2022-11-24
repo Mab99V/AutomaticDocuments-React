@@ -7,23 +7,27 @@
     }
 #canvas {
     background-color: black;
+    left: -15px;
+    top: 2px;
 }
 #lista{
     background-color: black;
+    top:23px;
+    left:5px;
 }
 #item{
     color: aliceblue;
 }
 
 #body {
-    position:relative;
+    position:static;
     left:6px;
     top:67px;
     }
  .MuiAvatar-root {
     position:relative;
     left:15px;
-    top:32px;
+    top:9px;
     width:46px;
     height:48px;
     }
@@ -65,4 +69,15 @@
     position:relative;
     left:-4px;
     top:-2px;
+}
+
+.bm-overlay {
+    position: static;
+    top: -5px;
+}
+
+.bm-item-list{
+    position:relative;
+left:-11px;
+top:-5px;
 }
