@@ -1,83 +1,15 @@
-#titulo {
-    position:relative;
-    font-size: 15px;
-    left:10px;
-    top:78px;
-    color: aliceblue;
-    }
-#canvas {
+#root > div > div > div > div > nav > div > div{
     background-color: black;
-    left: -15px;
-    top: 2px;
 }
-#lista{
+
+.css-1nxmd3h-MuiListItem-root{
+    color: white;
+}
+
+.css-h4y409-MuiList-root{
     background-color: black;
-    top:23px;
-    left:5px;
-}
-#item{
-    color: aliceblue;
 }
 
-#body {
-    position:static;
-    left:6px;
-    top:67px;
-    }
- .MuiAvatar-root {
-    position:relative;
-    left:15px;
-    top:9px;
-    width:46px;
-    height:48px;
-    }
-
-#home {
-    position:relative;
-    left:-4px;
-    top:-2px;
-    }
-
-#historial {
-    width: 20px;
-    position:relative;
-    left:-4px;
-    top:-2px;
-}
-
-#trabajadores {
-    width: 20px;
-    position:relative;
-    left:-4px;
-    top:-2px;
-}
-
-#estudiantes {
-    width: 20px;
-    position:relative;
-    left:-4px;
-    top:-2px;
-}
-#archivos {
-    width: 20px;
-    position:relative;
-    left:-4px;
-    top:-2px;
-}
-#config {
-    width: 20px;
-    position:relative;
-    left:-4px;
-    top:-2px;
-}
-
-.bm-overlay {
-    position: static;
-    top: -5px;
-}
-
-.bm-item-list{
-    position:relative;
-left:-11px;
-top:-5px;
+.MuiListItemIcon-root.css-cveggr-MuiListItemIcon-root{
+    color: white;
 }
