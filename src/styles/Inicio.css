@@ -1,5 +1,15 @@
-.container1 {
-   position:absolute;
-left:781px;
-top:421px;
+#root > div > div > div > div > nav > div > div{
+   background-color: black;
+}
+
+#container{
+   background-color: white;
+}
+
+#tex{
+   background-color: white;
+}
+
+#texto{
+   color: black;
 }
