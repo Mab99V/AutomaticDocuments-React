@@ -1,10 +1,7 @@
-/* eslint-disable no-undef */
 import React, { Component } from "react";
 import '../../styles/LoginS.css';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
-
-
 
 
 class Login extends Component {
@@ -40,15 +37,13 @@ render(){
            <Form.Group className="mb-3" controlId="formBasicEmail">
            <Form.Label>Correo electronico</Form.Label>
            <Form.Control type="email" placeholder="Ingrese correo electronico" name="username" onChange={this.handleChange}/>
-             
            </Form.Group>
-
            <Form.Group className="mb-3" controlId="formBasicPassword">
              <Form.Label>Contraseña</Form.Label>
                <Form.Control type="password" placeholder="Ingrese contraseña" name="password" onChange={this.handleChange}/>
            
            </Form.Group>
-               <Button  variant="dark" type="submit">
+               <Button  variant="dark" type="submit" href="/landingpage">
                   Ingresar
                </Button>
            </Form>
