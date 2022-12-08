@@ -4,22 +4,20 @@ import Navbar from '../navigate/Navbar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
-import '../../styles/Inicio.css';
 
-class Inicio extends Component{
+class Trabajadores extends Component{
 
     render(){ 
         return(
             <>
         <Navbar/>
-        <Toolbar id="tex"/>
-        <Box id="container">
-            <Typography id="texto">Esta vivo Funciona</Typography>
+        <Toolbar/>
+        <Box>
+            <Typography>Esta vivo Funciona desde Trabajadores</Typography>
         </Box>
         </>
     )}
 }
 
 
-
-export default Inicio;
+export default Trabajadores;

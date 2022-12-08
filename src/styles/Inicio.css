@@ -1,0 +1,15 @@
+#root > div > div > div > div > nav > div > div{
+   background-color: black;
+}
+
+#container{
+   background-color: white;
+}
+
+#tex{
+   background-color: white;
+}
+
+#texto{
+   color: black;
+}
