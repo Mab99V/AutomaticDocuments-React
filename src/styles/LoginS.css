@@ -48,8 +48,8 @@
 
 .btn {
   position: relative;
-  left: 32px;
-  top: 16px;
+  left: 16px;
+  top: -79px;
   width: 320px;
 }
 
@@ -75,3 +75,39 @@ position: relative;
 left: -1px;
 top: -16px;
 }
+
+#formU {
+  left:-13px;
+  top:-53px;
+  position:relative;
+  }
+
+.usuario {
+  position:relative;
+  left:-10px;
+  top:-44px;
+  }
+    
+.ce {
+  position: relative;
+  left:-9px;
+  top:-68px;
+  }
+
+#formE {
+  position: relative;
+  left:-14px;
+  top:-79px;
+  }
+  
+.co {
+  position:relative;
+  left:-10px;
+  top:-94px;
+  }
+    
+#formP {
+  position:relative;
+  left:-15px;
+  top:-105px;
+  }

@@ -2,27 +2,45 @@ import React, { Component } from "react";
 import '../../styles/LoginS.css';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
-
-
+//servicio
+import { Apiurl } from "../../services/apirest";
+//biblioteca
+import axios from 'axios';
 class Login extends Component {
 
-
-state={
-  form:{
-    username:'',
-    password:''
-  }
-}
-
-handleChange = async e => {
-   await this.setState({
+  state={
     form:{
-    ...this.state.form,
-    [e.target.name]: e.target.value
-    }
-  });
-  console.log(this.state.form);
-}
+      "usuario":"",
+      "correo":"",
+      "contrasena":""
+    },
+    error: false,
+    errorMsg:""
+  }
+
+
+
+  manejadorSubmit(e){
+    e.preventDefault();
+  }
+
+  handleChange = async e=>{
+    await this.setState({
+      form:{
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
+
+  manejadorBoton=()=>{
+    let url = Apiurl + "/administrador/ingresar";
+    axios.post(url,this.state.form)
+    .then(response =>{
+      console.log(response);
+    })
+  }
+
 render(){
         return(
       <div className='containerprincipal'>
@@ -33,20 +51,25 @@ render(){
         <center><h3>Ingresar</h3></center>
         <p>Solo personal autorizado</p>
         <br></br>
-         <Form>
-           <Form.Group className="mb-3" controlId="formBasicEmail">
-           <Form.Label>Correo electronico</Form.Label>
-           <Form.Control type="email" placeholder="Ingrese correo electronico" name="username" onChange={this.handleChange}/>
+         <Form onSubmit={this.manejadorSubmit}>
+         <Form.Group className="mb-3" controlId="formU">
+           <Form.Label className="usuario">Usuario</Form.Label>
+           <Form.Control type="text" placeholder="Ingrese usuario" name="usuario" onChange={this.handleChange}/>
            </Form.Group>
-           <Form.Group className="mb-3" controlId="formBasicPassword">
-             <Form.Label>Contraseña</Form.Label>
-               <Form.Control type="password" placeholder="Ingrese contraseña" name="password" onChange={this.handleChange}/>
+           <Form.Group className="mb-3" controlId="formE">
+           <Form.Label className="ce">Correo electronico</Form.Label>
+           <Form.Control type="email" placeholder="Ingrese correo electronico" name="correo" onChange={this.handleChange}/>
+           </Form.Group>
+           <Form.Group className="mb-3" controlId="formP">
+             <Form.Label className="co">Contraseña</Form.Label>
+               <Form.Control type="password" placeholder="Ingrese contraseña" name="contrasena" onChange={this.handleChange}/>
            
            </Form.Group>
-               <Button  variant="dark" type="submit" href="/landingpage">
+               <Button  variant="dark" type="submit" onClick={this.manejadorBoton}>
                   Ingresar
                </Button>
            </Form>
+          
         </div>
     </div>
     );
