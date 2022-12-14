@@ -3,13 +3,42 @@
 }
 
 #container{
+   position: relative;
+   left: 119px;
+   top: 35px;
    background-color: white;
+   width: 1119px;
+   height: 585px;
+   max-width: 1200px;
+   max-height: 1200px;
 }
 
 #tex{
    background-color: white;
+   position: relative;
 }
 
 #texto{
-   color: black;
+   background-color: white;
+   color: darkblue;
+   width: auto;
+   left: -0px;
+   font-size: x-large;
+   font-weight: bold;
+   padding: 10px;
+}
+
+#bh{
+   background-color: aquamarine;
+   color: blue;
+}
+
+#be{
+   background-color: lightcoral;
+   color: red;
+}
+
+#bs{
+   background-color: yellow;
+   color: goldenrod;
 }

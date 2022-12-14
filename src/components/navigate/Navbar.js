@@ -112,7 +112,7 @@ function ResponsiveDrawer(props) {
           color: 'blue',
         }}
       >
-        <Toolbar>
+        <Toolbar id='mensaje'>
           <IconButton 
             color="inherit"
             aria-label="open drawer"
