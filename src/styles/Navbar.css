@@ -83,10 +83,14 @@
 }
 
 #numero {
-    left:-61px;
+    left:-83px;
     top:16px;
     width:220px;
     height:25px;
-    min-width:150px;
+    min-width:160px;
     position:relative;
+}
+
+#mensaje{
+    background-color: white;
 }
