@@ -10,6 +10,7 @@ class Login extends Component {
 
   state={
     form:{
+     
       "usuario":"",
       "correo":"",
       "contrasena":""
@@ -34,10 +35,26 @@ class Login extends Component {
   }
 
   manejadorBoton=()=>{
+    
     let url = Apiurl + "/administrador/ingresar";
     axios.post(url,this.state.form)
     .then(response =>{
-      console.log(response);
+      console.log(response)
+      if(response.data.status === 200){
+       localStorage.setItem("token",response.data.token);
+      
+      }else {
+        this.setState({
+          error: true,
+          //errorMsg: response.data
+        })
+      }
+    }).catch( error =>{
+      console.log(error);
+      this.setState({
+        error: true,
+        errorMsg: "Error de autenticacion"
+      })
     })
   }
 
@@ -59,7 +76,7 @@ render(){
            <Form.Group className="mb-3" controlId="formE">
            <Form.Label className="ce">Correo electronico</Form.Label>
            <Form.Control type="email" placeholder="Ingrese correo electronico" name="correo" onChange={this.handleChange}/>
-           </Form.Group>
+           </Form.Group> 
            <Form.Group className="mb-3" controlId="formP">
              <Form.Label className="co">Contraseña</Form.Label>
                <Form.Control type="password" placeholder="Ingrese contraseña" name="contrasena" onChange={this.handleChange}/>
@@ -67,8 +84,14 @@ render(){
            </Form.Group>
                <Button  variant="dark" type="submit" onClick={this.manejadorBoton}>
                   Ingresar
-               </Button>
+               </Button>  
            </Form>
+           {this.state.error === true &&
+               <div className="alert alert-danger" role="alert">
+                     {this.state.errorMsg}
+                     
+              </div>
+               }
           
         </div>
     </div>

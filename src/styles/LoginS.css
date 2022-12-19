@@ -48,9 +48,17 @@
 
 .btn {
   position: relative;
-  left: 16px;
-  top: -79px;
+  left: 17px;
+  top: -100px;
   width: 320px;
+}
+.alert{
+  position: relative;
+  left:15px;
+  top:-108px;
+  width: 320px;
+  height:39px;
+  text-align:center;
 }
 
 h3 {
