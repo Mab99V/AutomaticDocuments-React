@@ -2,11 +2,20 @@ import React, { Component } from "react";
 import '../../styles/LoginS.css';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
+import { funcionRouter } from "../../function/funcionRouter";
 //servicio
 import { Apiurl } from "../../services/apirest";
 //biblioteca
 import axios from 'axios';
+
+
 class Login extends Component {
+  
+  constructor(){
+    super();
+    this.redireccion = this.redireccion.bind(this);
+    
+  }
 
   state={
     form:{
@@ -18,7 +27,7 @@ class Login extends Component {
     error: false,
     errorMsg:""
   }
-
+  
 
 
   manejadorSubmit(e){
@@ -33,27 +42,22 @@ class Login extends Component {
       }
     })
   }
-
-  manejadorBoton=()=>{
+ 
+  redireccion(){
+   this.props.navigate("/landingpage/Inicio")
+  }
+  manejadorBoton= () => {
     
     let url = Apiurl + "/administrador/ingresar";
     axios.post(url,this.state.form)
     .then(response =>{
-      console.log(response)
-      if(response.data.status === 200){
        localStorage.setItem("token",response.data.token);
-      
-      }else {
-        this.setState({
-          error: true,
-          //errorMsg: response.data
-        })
-      }
+       this.redireccion()  
     }).catch( error =>{
-      console.log(error);
+      console.log(error.response.data);
       this.setState({
         error: true,
-        errorMsg: "Error de autenticacion"
+        errorMsg: "Invalido"
       })
     })
   }
@@ -99,4 +103,4 @@ render(){
     
  }
 }
-export default Login;
+export default funcionRouter(Login); 
