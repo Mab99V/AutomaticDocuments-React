@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import { funcionRouter } from "../../function/funcionRouter";
 //servicio
-import { Apiurl } from "../../services/apirest";
+import {baseURL} from '../../services/api'
 //biblioteca
 import axios from 'axios';
 
@@ -48,7 +48,7 @@ class Login extends Component {
   }
   manejadorBoton= () => {
     
-    let url = Apiurl + "/administrador/ingresar";
+    let url = baseURL + "/administrador/ingresar";
     axios.post(url,this.state.form)
     .then(response =>{
        localStorage.setItem("token",response.data.token);

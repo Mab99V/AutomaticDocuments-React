@@ -1,10 +1,12 @@
-import React from 'react';
-import { Component } from 'react';
-import Archive  from '@material-ui/icons/FolderOpen';
-import Navbar from '../navigate/Navbar';
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+
+import CssBaseline from '@mui/material/CssBaseline';
+import Navbar from '../navigate/Navbar'
 import '../../styles/Inicio.css';
+
+import Typography from '@mui/material/Typography';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -14,37 +16,82 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import Archive  from '@material-ui/icons/FolderOpen';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
+const drawerWidth = 240;
   
-  const rows = [
-    createData('Trabajador', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-  ];
+const rows = [
+  createData('Trabajador', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: `-${drawerWidth}px`,
+    ...(open && {
+      transition: theme.transitions.create('margin', {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginLeft: 0,
+    }),
+  }),
+);
+
+
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+}));
+
+export default function PersistentDrawerLeft() {
+
+  const [open] = React.useState(false);
+
   
 
-class Inicio extends Component{
+ 
 
-    render(){ 
-        return(
-            <>
-        <Navbar/>
-        <Box id="container">
-            <Typography id="texto">Acceder</Typography>
-    <Stack direction="row" spacing={2} alignItems="flex-start" justifyContent="center">
+  return (
+    <div className="container" >
+    <div className="row">
+       <div className="col md-4">
+   
+    <Box  sx={{ display: 'flex' }}>
+       <Navbar/>
+      <CssBaseline />
+      
+  
+      <Main open={open}>
+        <DrawerHeader />
+        <Typography id="texto">Acceder</Typography>
+    <Stack id="botones" direction="row" spacing={2} alignItems="flex-start" justifyContent="center">
       <Button id="bh" variant="outlined" href="/landingpage/Historial"><Archive></Archive>Historial de Documentos</Button>
       <Button id="be" variant="outlined" href="/landingpage/Estudiantes"><Archive></Archive> Estudiantes</Button>
       <Button id="bs" variant="outlined" href="/landingpage/Trabajadores"><Archive></Archive> Secretarias</Button>
     </Stack>
-
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
+    
+   
+    <TableContainer id="containerTable"  component={Paper}>
+      <Table id="tabla" sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead >
           <TableRow>
             <TableCell>Trabajador</TableCell>
             <TableCell align="right">Puesto</TableCell>
@@ -72,10 +119,20 @@ class Inicio extends Component{
         </TableBody>
       </Table>
     </TableContainer>
-        </Box>
-        </>
-    )}
+     
+   
+      </Main>
+    </Box>
+    </div>
+    </div>
+    </div>
+  );
 }
 
 
-export default Inicio;
+
+
+
+
+
+

@@ -1,96 +1,54 @@
-#root > div > div > div > div > nav > div > div{
-    background-color: black;
-}
-
-
-.css-1nxmd3h-MuiListItem-root{
-    color: white;
-}
-
-#lista{
-    background-color: black;
-}
-
-#item{
-    color: aliceblue;
-}
-
-.MuiListItemIcon-root.css-cveggr-MuiListItemIcon-root{
-    color: white;
-}
-
 #home {
     position:relative;
     left:-4px;
     top:-2px;
+    color: aliceblue;
+    }
+    
+#salir {
+   
+    position:relative;
+    left:991px;
+    top:-51px;
+    width:42px;
+    height:36px
     }
 
-#historial {
+#icon{
     width: 20px;
     position:relative;
     left:-4px;
     top:-2px;
-}
+    color: aliceblue;
+    }
 
-#trabajadores {
-    width: 20px;
+#tol{
+    height:63px;
+    background-color:#ffffff;
+}
+ #avatar {
     position:relative;
-    left:-4px;
-    top:-2px;
-}
-
-#estudiantes {
-    width: 20px;
+    left:-19px;
+    top:-64px;
+    }
+    
+#nombre {
     position:relative;
-    left:-4px;
-    top:-2px;
-}
-#archivos {
-    width: 20px;
-    position:relative;
-    left:-4px;
-    top:-2px;
-}
-#config {
-    width: 20px;
-    position:relative;
-    left:4px;
-    top:-2px;
-}
-
-.bm-item-list{
-    position:relative;
-    left:-8px;
-    top:-9px
-}
-
-#p{position: initial;
-    left: 83px;
-    top: -19px;
-    color: white;
-    font-family: Arial;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 600;
-    font-size: large;
-}
-
-#nombre{
-    position:relative;
-    left:22px;
-    top:-4px;
-    font-size: large;
-}
+    left:-6px;
+    top:-63px;
+    }
 
 #numero {
-    left:-83px;
-    top:16px;
-    width:220px;
-    height:25px;
-    min-width:160px;
     position:relative;
+    left:-82px;
+    top:-17px;
+    font-size:12px;
+    text-align:center;
+    }
+
+#p {
+    position:relative;
+    left:-16px;
+    top:-5px;
 }
 
-#mensaje{
-    background-color: white;
-}
