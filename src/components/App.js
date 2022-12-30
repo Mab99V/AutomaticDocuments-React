@@ -9,8 +9,6 @@ import Historial from './pages/Historial';
 import Trabajadores from './pages/Trabajadores';
 import Estudiantes from './pages/Estudiantes';
 
-
-
 function App(){
   return (
     <div className='container'>
@@ -24,8 +22,7 @@ function App(){
               <Route path="/landingpage/Archivos" element={<Archivos/>}/>
               <Route path="/landingpage/Configuraciones" element={<Configuraciones/>}/>
               <Route path="/landingpage/Trabajadores" element={<Trabajadores/>}/>
-              <Route path="/landingpage/Estudiantes" element={<Estudiantes/>}/>
-              
+              <Route path="/landingpage/Estudiantes" element={<Estudiantes/>}/>              
           </Routes>
         </div>
       </div>

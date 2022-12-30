@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Navbar from '../navigate/Navbar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Config from '../../services/Config';
 
 class Configuraciones extends Component{
 
@@ -12,6 +13,7 @@ class Configuraciones extends Component{
         <Navbar/>
         <Box id="container">
             <Typography id="texto">Configuraciones</Typography>
+            <Config></Config>
         </Box>
         </>
     )}

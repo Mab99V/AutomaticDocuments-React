@@ -1,0 +1,69 @@
+body > div.MuiDialog-root.dialog.MuiModal-root.css-zw3mfo-MuiModal-root-MuiDialog-root > div.MuiDialog-container.MuiDialog-scrollPaper.css-hz1bth-MuiDialog-container > div{
+    max-width: 750px;
+    overflow-y: clip;
+}
+
+.corr{
+    left: 250px;
+    top: -80px;
+    position: relative;
+}
+
+.trami{
+    position: relative;
+    top: -70px;
+}
+
+.progra{
+    position: relative;
+    left: 250px;
+    top: -152px;
+}
+
+.fech{
+    position: relative;
+    top: -140px;
+}
+
+.matri{
+    position: relative;
+    left: 250px;
+    top: -222px;
+}
+
+.descrip{
+    position: relative;
+    top: -200px;
+}
+
+#foto{
+    width: 200px;
+    height: 200px;
+    top: -724px;
+    left: 500px;
+}
+
+.foto{
+    position: relative;
+    top: -720px;
+    left: 580px;
+}
+
+#matricula{
+    width: 200px;
+    height: 200px;
+    top: -704px;
+    left: 500px;
+}
+.matricula{
+    position: relative;
+    top: -700px;
+    left: 560px;
+}
+
+.body{
+    width: 750px;
+    height: 750px;
+    left: 28px;
+    position: relative;
+}

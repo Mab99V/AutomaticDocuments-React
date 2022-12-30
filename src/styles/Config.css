@@ -1,0 +1,51 @@
+#AdminImagen{
+    width: 200px;
+    height: 200px;
+    top: -20px;
+    left: 400px;
+}
+
+.textoAdmin{
+    position: relative;
+    margin: auto;
+    left: -55px;
+    display: block;
+    max-width: fit-content;
+}
+
+#nombreC{
+    position: relative;
+    left: 306px;
+    top: 54px;
+}
+
+.nombreC{
+    left: 160px;
+    top: 80px;
+    position: relative;
+    max-width: 180px;
+}
+
+#correoC{
+    position: relative;
+    left: 260px;
+    top: 54px;
+}
+
+.correoC{
+    left: 205px;
+    top: 80px;
+    position: relative;
+}
+
+#usuarioC{
+    right: 210px;
+    top: 170px;
+    position: relative;
+}
+
+.usuarioC{
+    top: 200px;
+    position: relative;
+    right: 272px;
+}

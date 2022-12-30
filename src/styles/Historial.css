@@ -1,15 +1,15 @@
-#container{
-    position: relative;
-    left: 119px;
-    top: 35px;
-    background-color: white;
-    width: 1119px;
-    height: 585px;
-    max-width: 1200px;
-    max-height: 1200px;
+#containep{
+   position: relative;
+   left: 119px;
+   top: 35px;
+   background-color: white;
+   width: 1119px;
+   height: 585px;
+   max-width: 1200px;
+   max-height: 1200px;
  }
 
- #texto{
+ #textp{
     background-color: white;
     color: darkblue;
     width: auto;
@@ -18,3 +18,13 @@
     font-weight: bold;
     padding: 10px;
  }
+
+
+.bg-curso{
+   background-color: violet;
+}
+
+#tabla{
+   max-width: 1200px;
+   max-height: 1200px;
+}

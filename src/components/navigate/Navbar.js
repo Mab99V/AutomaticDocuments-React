@@ -9,7 +9,6 @@ import IconButton from '@mui/material/IconButton';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import List from '@mui/material/List';
 import Avatar from '@mui/material/Avatar';
-import { deepOrange } from '@mui/material/colors';
 import  ContentPasteSearchOutlinedIcon  from '@mui/icons-material/ContentPasteSearchOutlined';
 import ListItemButton from '@mui/material/ListItemButton';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
@@ -46,7 +45,7 @@ function ResponsiveDrawer(props) {
     <div>
       
       <Toolbar> 
-      <Avatar  id="avatar" sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar  id="avatar" src='../images/user.jpg'></Avatar>
       <Typography id="nombre">Samantha</Typography> 
       <Typography id="numero">+998 (99) 436-46-15</Typography>
       </Toolbar>

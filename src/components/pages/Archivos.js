@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Navbar from '../navigate/Navbar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Tabla from '../../services/TablaT';
 
 class Archivos extends Component{
 
@@ -12,6 +13,7 @@ class Archivos extends Component{
         <Navbar/>
         <Box id="container">
             <Typography id="texto">Archivos</Typography>
+            <Tabla></Tabla>
         </Box>
         </>
     )}
