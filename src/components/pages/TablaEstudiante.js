@@ -1,17 +1,17 @@
+
 import React, { useState, useEffect } from 'react'; 
 import { Edit, Delete} from '@material-ui/icons';
 import {baseURL} from '../../services/api'
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import {Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Modal,Button,TextField} from '@material-ui/core';
-import '../../styles/Trabajadores.css';
+import '../../styles/Estudiantes.css';
 
 
 const useStyles =makeStyles((theme) =>({
   modal:{
     position:'absolute',
-    width:800,
-    height:745,
+    width:400,
     backgroundColor:theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow:theme.shadows[5],
@@ -28,29 +28,28 @@ const useStyles =makeStyles((theme) =>({
   }
 }));
 
-const TablaTrabajadores = () => {
+const TablaEstudiante = () => {
 
-    let url = baseURL + "/secretarias/";
-    let url2 = baseURL + "/secretaria/";
+    let url = baseURL + "/estudiantes/";
+    let url2 = baseURL + "/estudiante/"
     const styles=useStyles();
-    const[trabajadores, setTrabajadores]=useState([]);
+    const[estu, setEstudiante]=useState([]);
     const[modalEdi,setModalEdi]=useState(false);
     const[modalEli,setModalEli]=useState(false);
     const[ search, setSearch] = useState("")
+
     //consolaseleccionada y setConsolaSeleccionada
     const [insert,setInser]=useState({
-     id:'',
-     id_facultades: '',
-     nombre: '',
-     apellido_paterno: '',
-     apellido_materno: '',
-     turno:'',
-     telefono: '',
-     matricula: '',
-     correo: '',
-     contrasena: '',
-     direccion:'',
-     foto_perfil: ''
+      id:'',
+      id_carreras:'',
+      id_facultades:'',
+      nombre_completo:'',
+      matricula:'',
+      correo:'',
+      contrasena:'',
+      semestre:'',
+      telefono:'',
+      url:''
       
     })
 
@@ -65,14 +64,14 @@ const TablaTrabajadores = () => {
     const peticionGet=async() =>{
         await axios.get(url)
         .then(response=>{
-            setTrabajadores(response.data)
+            setEstudiante(response.data)
         })
     }
 
     const peticionPut=async()=>{
-      await axios.put(url+insert.id,insert)
+      await axios.put(url2+insert.id,insert)
       .then(response=>{
-        var dataNueva=trabajadores;
+        var dataNueva=estu;
         dataNueva.map(consola=>{
           if(insert.id===consola.id){
             consola.id_carreras=insert.id_carreras;
@@ -86,35 +85,36 @@ const TablaTrabajadores = () => {
             consola.foto_perfil=insert.foto_perfil;
           }
         })
-        setTrabajadores(dataNueva);
+        setEstudiante(dataNueva);
         abrircerrarModalEdi();
       })
     }
+
     const peticionDelete=async() =>{
-      await axios.delete(url2+`${insert.id_facultades}/${insert.id}`,insert)
+      await axios.delete(url2+insert.id,insert)
       .then(response=>{
-          setTrabajadores(trabajadores.filter(consola=>trabajadores.id!==insert.id));
+          setEstudiante(estu.filter(consola=>estu.id!==insert.id));
           abrircerrarModalElimi();
       })
   }
+
    
   const abrircerrarModalEdi=()=>{
     setModalEdi(!modalEdi);
 }
+
 const abrircerrarModalElimi=()=>{
   setModalEli(!modalEli);
 }
-const seleccionarConsola=(consola,caso)=>{
-  setInser(consola);
-  (caso==='Editar')?abrircerrarModalEdi(true):abrircerrarModalElimi()
-  
-}
-
+  const seleccionarConsola=(consola,caso)=>{
+    setInser(consola);
+    (caso==='Editar')?abrircerrarModalEdi(true):abrircerrarModalElimi()
+    
+  }
   const searcher = (e) =>{
     setSearch(e.target.value)
     console.log(e)
 }
-  
     useEffect(()=>{
          peticionGet();
     });
@@ -123,30 +123,26 @@ const seleccionarConsola=(consola,caso)=>{
     
     const bodyEdi=(
       <div className={styles.modal}>
-        <h3>Datos de las Secretarias</h3>
+        <h3>Datos del Estudiante</h3>
         <TextField name="id" className={styles.inputMaterial} label="#ID" onChange={handleChange} value={insert && insert.id}/>
         <br />
-        <TextField  name="id_facultades" className={styles.inputMaterial} label="#Facultades" onChange={handleChange} value={insert && insert.id_facultades}/>
+        <TextField name="id_carreras" className={styles.inputMaterial} label="#Carreras" onChange={handleChange} value={insert && insert.id_carreras}/>
         <br />
-        <TextField   name="nombre" className={styles.inputMaterial} label="Nombre" onChange={handleChange} value={insert && insert.nombre}/>
+        <TextField name="id_facultades" className={styles.inputMaterial} label="#Facultades" onChange={handleChange} value={insert && insert.id_facultades}/>
         <br />
-        <TextField  name="apellido_paterno" className={styles.inputMaterial} label="Apellido Paterno" onChange={handleChange} value={insert && insert.apellido_paterno}/>
+        <TextField name="nombre_completo" className={styles.inputMaterial} label="Nombre Completo" onChange={handleChange} value={insert && insert.nombre_completo}/>
         <br />
-        <TextField   name="apellido_materno" className={styles.inputMaterial} label="Apellido Materno" onChange={handleChange} value={insert && insert.apellido_materno}/>
+        <TextField name="matricula" className={styles.inputMaterial} label="Matricula" onChange={handleChange} value={insert && insert.matricula}/>
         <br />
-        <TextField  name="turno" className={styles.inputMaterial} label="Turno" onChange={handleChange} value={insert && insert.turno}/>
+        <TextField name="correo" className={styles.inputMaterial} label="Correo" onChange={handleChange} value={insert && insert.correo}/>
         <br />
-        <TextField  name="telefono" className={styles.inputMaterial} label="Telefono" onChange={handleChange} value={insert && insert.telefono}/>
+        <TextField  name="congtrasena" className={styles.inputMaterial} label="Contrasena" onChange={handleChange} value={insert && insert.contrasena}/>
         <br />
-        <TextField   name="matricula" className={styles.inputMaterial} label="Matricula" onChange={handleChange} value={insert && insert.matricula}/>
+        <TextField name="semestre" className={styles.inputMaterial} label="Semestre" onChange={handleChange} value={insert && insert.semestre}/>
         <br />
-        <TextField  name="correo" className={styles.inputMaterial} label="Correo" onChange={handleChange} value={insert && insert.correo}/>
+        <TextField name="telefono" className={styles.inputMaterial} label="Telefono" onChange={handleChange}value={insert && insert.telefono}/>
         <br />
-        <TextField  name="contrasena" className={styles.inputMaterial} label="Contraseña" onChange={handleChange}value={insert && insert.contrasena}/>
-        <br />
-        <TextField   name="direccion" className={styles.inputMaterial} label="Direccion" onChange={handleChange} value={insert && insert.direccion}/>
-        <br />
-        <TextField   name="url" className={styles.inputMaterial} label="URL" onChange={handleChange} value={insert && insert.foto_perfil}/>
+        <TextField name="url" className={styles.inputMaterial} label="URL" onChange={handleChange} value={insert && insert.foto_perfil}/>
         <br/> <br/>
         <div align="right">
           <Button color="primary" onClick={()=>peticionPut()}>Confirmar</Button>
@@ -157,7 +153,7 @@ const seleccionarConsola=(consola,caso)=>{
 
     const bodyElimi=(
       <div className={styles.modal}>
-          <p id="p"> Seguro que desea eliminar a <b>{insert && insert.nombre}</b></p>
+          <p id="p"> Seguro que desea eliminar a <b>{insert && insert.nombre_completo}</b></p>
     
         <div align="right">
           <Button color="secondary" onClick={()=>peticionDelete()}>Si</Button>
@@ -166,77 +162,68 @@ const seleccionarConsola=(consola,caso)=>{
       </div> 
     )
 
-    const resultados = !search ? trabajadores : trabajadores.filter((dato) => dato.nombre.toLowerCase().includes(search.toLocaleLowerCase()))
 
+    const resultados = !search ? estu : estu.filter((dato) => dato.nombre_completo.toLowerCase().includes(search.toLocaleLowerCase()))
   return (
     <div >
-       <TextField  value={search} onChange={searcher}/>
+        <TextField  value={search} onChange={searcher}/>
       <br/>
       <TableContainer id="containerTable">
         <Table id="tabla"  sx={{ minWidth: 500 }} >
           <TableHead >
             <TableRow>
             <TableCell>#ID</TableCell>
+            <TableCell>#Carreras</TableCell>
             <TableCell>#Facultades</TableCell>
-            <TableCell align="right">Nombre</TableCell>
-            <TableCell align="right">Apellido Paterno</TableCell>
-            <TableCell align="right">Apellido Materno</TableCell>
-            <TableCell align="right">Turno</TableCell>
-            <TableCell align="right">Telefono</TableCell>
+            <TableCell align="right">Nombre Completo</TableCell>
             <TableCell align="right">Matricula</TableCell>
             <TableCell align="right">Correo</TableCell>
             <TableCell align="center">Contraseña</TableCell>
-            <TableCell align="right">Direccion</TableCell>
+            <TableCell align="right">Semestre</TableCell>
+            <TableCell align="right">Telefono</TableCell>
             <TableCell align="right">URL</TableCell>
             <TableCell align="right">Acciones</TableCell>
             </TableRow>
         </TableHead>
 
         <TableBody>
-         {resultados.map((trabajadores) =>(
-        <TableRow key={trabajadores.id}>
+         {resultados.map((estu) =>(
+        <TableRow key={estu.id}>
         <TableCell component="th" scope="row">
-          {trabajadores.id}
-        </TableCell>
-        <TableCell component="th" scope="row">
-          {trabajadores.id_facultades}
+          {estu.id}
         </TableCell>
         <TableCell component="th" scope="row">
-          {trabajadores.nombre}
+          {estu.id_carreras}
+        </TableCell>
+        <TableCell component="th" scope="row">
+          {estu.id_facultades}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.apellido_paterno}
+          {estu.nombre_completo}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.apellido_materno}
+          {estu.matricula}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.turno}
+          {estu.correo}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.telefono}
+          {estu.contrasena}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.matricula}
+          {estu.semestre}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.correo}
+          {estu.telefono}
         </TableCell>
         <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.contrasena}
+          {estu.foto_perfil}
         </TableCell>
-        <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.direccion}
-        </TableCell>
-        <TableCell style={{ width: 160 }} align="right">
-          {trabajadores.foto_perfil}
-        </TableCell>
-      
 
         <TableCell style={{ width: 160 }} align="right">
-          <Edit className={styles.iconos} onClick={()=> seleccionarConsola(trabajadores, 'Editar')}/>
+          <Edit className={styles.iconos} onClick={()=> seleccionarConsola(estu, 'Editar')}/>
          &nbsp;&nbsp;&nbsp;
-         <Delete className={styles.iconos} onClick={()=> seleccionarConsola(trabajadores, 'Eliminar')}/>
+         <Delete className={styles.iconos} onClick={()=> seleccionarConsola(estu, 'Eliminar')}/>
         </TableCell>
       </TableRow>
          ))}
@@ -260,4 +247,4 @@ const seleccionarConsola=(consola,caso)=>{
   )
 }
 
-export default TablaTrabajadores
+export default TablaEstudiante

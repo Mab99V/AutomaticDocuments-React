@@ -18,11 +18,12 @@
    top:23px;
    }
 
-#texto {
+#textoI{
+   
    position:relative;
-   left:116px;
-   top:-3px;
-   width:76px;
+   left:131px;
+   top:-2px;
+   width:500px;
    color:#050505;
    font-size:33px;
    font-weight:700;

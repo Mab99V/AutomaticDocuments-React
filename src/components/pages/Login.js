@@ -86,7 +86,7 @@ render(){
                <Form.Control type="password" placeholder="Ingrese contraseña" name="contrasena" onChange={this.handleChange}/>
            
            </Form.Group>
-               <Button  variant="dark" type="submit" onClick={this.manejadorBoton}>
+               <Button  id='btn2'variant="dark" type="submit" onClick={this.manejadorBoton}>
                   Ingresar
                </Button>  
            </Form>

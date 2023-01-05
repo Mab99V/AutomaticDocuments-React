@@ -5,10 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from '../navigate/Navbar'
 import '../../styles/Trabajadores.css';
 import Typography from '@mui/material/Typography';
-//import Paper from '@mui/material/Paper';
-//import InputBase from '@mui/material/InputBase';
-//import IconButton from '@mui/material/IconButton';
-//import SearchIcon from '@mui/icons-material/Search';
 import TablaTrabajadores from './TablaTrabajadores';
 
 

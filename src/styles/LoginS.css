@@ -46,10 +46,10 @@
 }
 
 
-.btn {
+#btn2 {
   position: relative;
-  left: 17px;
-  top: -100px;
+  left: 22px;
+  top: -73px;
   width: 320px;
 }
 .alert{

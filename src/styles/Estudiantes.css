@@ -1,3 +1,54 @@
-.MuiToolbar-root {
-    height:83px;
+#containerTable{
+    height:500px;
+    position:relative;
+    left:95px;
+    top:15px;
+ }
+ .btn-dark {
+   position:relative;
+   left:-2px;
+   top:412px;
+   }
+   
+ 
+ #tabla{
+    left:125px;
+    top:56px;
+    width:900px;
+    height:370px;
+    position:relative
+ }
+ 
+ #botones {
+    left:33px;
+    top:23px;
     }
+ 
+ #texto {
+    position:relative;
+    left:116px;
+    top:-3px;
+    width:76px;
+    color:#050505;
+    font-size:33px;
+    font-weight:700;
+    }
+    
+#conte {
+    position:relative;
+    left:337px;
+    top:-50px;
+    width:150px;
+    }
+    
+#eli {
+      position:relative;
+      left:36px;
+      top:-41px;
+      }
+
+#p{
+   position: relative;
+   left: 18px;
+   top: -10px;
+}

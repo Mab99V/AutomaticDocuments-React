@@ -15,7 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
-import { deepOrange } from '@mui/material/colors';
+
 //icon
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
@@ -143,9 +143,7 @@ export default function PersistentDrawerLeft() {
         <Divider />
 
         <Toolbar> 
-      <Avatar  id="avatar" sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-      <Typography id="nombre">Samantha</Typography> 
-      <Typography id="numero">+998 (99) 436-46-15</Typography>
+      <Avatar  id="avatar" ></Avatar>
       </Toolbar>
       <Toolbar><Typography id='p'>Menu Principal</Typography></Toolbar>
       <Divider />
