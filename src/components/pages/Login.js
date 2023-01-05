@@ -2,14 +2,24 @@ import React, { Component } from "react";
 import '../../styles/LoginS.css';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
+import { funcionRouter } from "../../function/funcionRouter";
 //servicio
-import { Apiurl } from "../../services/apirest";
+import {baseURL} from '../../services/api'
 //biblioteca
 import axios from 'axios';
+
+
 class Login extends Component {
+  
+  constructor(){
+    super();
+    this.redireccion = this.redireccion.bind(this);
+    
+  }
 
   state={
     form:{
+     
       "usuario":"",
       "correo":"",
       "contrasena":""
@@ -17,7 +27,7 @@ class Login extends Component {
     error: false,
     errorMsg:""
   }
-
+  
 
 
   manejadorSubmit(e){
@@ -32,12 +42,23 @@ class Login extends Component {
       }
     })
   }
-
-  manejadorBoton=()=>{
-    let url = Apiurl + "/administrador/ingresar";
+ 
+  redireccion(){
+   this.props.navigate("/landingpage/Inicio")
+  }
+  manejadorBoton= () => {
+    
+    let url = baseURL + "/administrador/ingresar";
     axios.post(url,this.state.form)
     .then(response =>{
-      console.log(response);
+       localStorage.setItem("token",response.data.token);
+       this.redireccion()  
+    }).catch( error =>{
+      console.log(error.response.data);
+      this.setState({
+        error: true,
+        errorMsg: "Invalido"
+      })
     })
   }
 
@@ -59,16 +80,22 @@ render(){
            <Form.Group className="mb-3" controlId="formE">
            <Form.Label className="ce">Correo electronico</Form.Label>
            <Form.Control type="email" placeholder="Ingrese correo electronico" name="correo" onChange={this.handleChange}/>
-           </Form.Group>
+           </Form.Group> 
            <Form.Group className="mb-3" controlId="formP">
              <Form.Label className="co">Contraseña</Form.Label>
                <Form.Control type="password" placeholder="Ingrese contraseña" name="contrasena" onChange={this.handleChange}/>
            
            </Form.Group>
-               <Button  variant="dark" type="submit" href="/landingpage/Inicio">
+               <Button  id='btn2'variant="dark" type="submit" onClick={this.manejadorBoton}>
                   Ingresar
-               </Button>
+               </Button>  
            </Form>
+           {this.state.error === true &&
+               <div className="alert alert-danger" role="alert">
+                     {this.state.errorMsg}
+                     
+              </div>
+               }
           
         </div>
     </div>
@@ -76,4 +103,4 @@ render(){
     
  }
 }
-export default Login;
+export default funcionRouter(Login); 

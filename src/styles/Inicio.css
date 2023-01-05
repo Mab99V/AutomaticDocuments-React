@@ -1,44 +1,31 @@
-#root > div > div > div > div > nav > div > div{
-   background-color: black;
+#containerTable{
+   height:500px;
+   position:relative;
+   left:95px;
+   top:15px;
 }
 
-#container{
-   position: relative;
-   left: 119px;
-   top: 35px;
-   background-color: white;
-   width: 1119px;
-   height: 585px;
-   max-width: 1200px;
-   max-height: 1200px;
+#tabla{
+   left:125px;
+   top:56px;
+   width:900px;
+   height:370px;
+   position:relative
 }
 
-#tex{
-   background-color: white;
-   position: relative;
-}
+#botones {
+   left:33px;
+   top:23px;
+   }
 
-#texto{
-   background-color: white;
-   color: darkblue;
-   width: auto;
-   left: -0px;
-   font-size: x-large;
-   font-weight: bold;
-   padding: 10px;
-}
-
-#bh{
-   background-color: aquamarine;
-   color: blue;
-}
-
-#be{
-   background-color: lightcoral;
-   color: red;
-}
-
-#bs{
-   background-color: yellow;
-   color: goldenrod;
-}
+#textoI{
+   
+   position:relative;
+   left:131px;
+   top:-2px;
+   width:500px;
+   color:#050505;
+   font-size:33px;
+   font-weight:700;
+   }
+   
