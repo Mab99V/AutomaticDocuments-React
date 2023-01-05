@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 
-const url = 'http://52.146.91.57:8080/api/administrador/administrador/6'
+const url = 'http://52.146.91.57:8080/api/administrador/administrador/7'
 
 const Config = () => {
     const[usuarios, setUsuario] = useState([])

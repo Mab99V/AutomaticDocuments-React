@@ -9,12 +9,13 @@
     max-height: 1200px;
  }
 
- #texto{
+ #textoc{
     background-color: white;
-    color: darkblue;
+    color: black;
     width: auto;
     left: -0px;
     font-size: x-large;
     font-weight: bold;
     padding: 10px;
+    top: -3px;
  }
