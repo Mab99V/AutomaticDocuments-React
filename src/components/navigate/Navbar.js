@@ -184,7 +184,7 @@ export default function PersistentDrawerLeft() {
           </ListItemButton>
           <ListItemButton selected={selectedIndex === 6}
               onClick={(event => handleListItemClick(event, 6))}
-              href="/landingpage/Configuracion">
+              href="/landingpage/Configuraciones">
             <TuneIcon  id= 'icon' color='primary' fontSize='small'/>
              <ListItemText    primary=" Configuracion" />
           </ListItemButton>
