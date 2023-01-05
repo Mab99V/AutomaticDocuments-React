@@ -1,12 +1,12 @@
 import * as React from 'react';
-import '../styles/Config.css'
+import '../../styles/Config.css'
 import { Avatar,TextField} from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 
 
-const url = 'http://52.146.91.57:8080/api/administrador/administrador/2'
+const url = 'http://52.146.91.57:8080/api/administrador/administrador/6'
 
 const Config = () => {
     const[usuarios, setUsuario] = useState([])

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import '../styles/Dialog.css'
+import '../../styles/Dialog.css'
 import { Avatar, DialogTitle, TextField } from '@mui/material';
 
 export default function AlertDialog() {
