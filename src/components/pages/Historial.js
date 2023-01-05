@@ -3,17 +3,17 @@ import { Component } from 'react';
 import Navbar from '../navigate/Navbar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Toolbar from '@mui/material/Toolbar';
+import '../../styles/Historial.css'
+import TablaS from './TablaS' 
 
 class Historial extends Component{
-
     render(){ 
         return(
-            <>
+        <>
         <Navbar/>
-        <Toolbar/>
-        <Box>
-            <Typography>Esta vivo Funciona desde Historial</Typography>
+        <Box id="containep" >
+            <Typography id="textp">Historial</Typography>
+            <TablaS/>
         </Box>
         </>
     )}

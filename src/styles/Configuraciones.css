@@ -1,0 +1,20 @@
+#container{
+    position: relative;
+    left: 119px;
+    top: 35px;
+    background-color: white;
+    width: 1119px;
+    height: 585px;
+    max-width: 1200px;
+    max-height: 1200px;
+ }
+
+ #texto{
+    background-color: white;
+    color: darkblue;
+    width: auto;
+    left: -0px;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px;
+ }
