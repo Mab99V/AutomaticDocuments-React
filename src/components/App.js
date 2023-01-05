@@ -9,8 +9,6 @@ import Historial from './pages/Historial';
 import Trabajadores from './pages/Trabajadores';
 import Estudiantes from './pages/Estudiantes';
 
-
-
 const App= () => {
   return (
     
@@ -27,7 +25,6 @@ const App= () => {
          
             </Routes>
         
-   
  );
 };
 

@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import TablaHistorial from './TablaHistorial';
 
 
-
 const drawerWidth = 240;
   
 //Propiedades del Navbar 
